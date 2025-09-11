@@ -1,0 +1,184 @@
+
+
+.pageName{
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 2px #B74000;
+  margin: 5px; 
+  position: sticky;
+  background: white;
+  top: 0;
+  z-index: 10;
+}
+
+.footerPage{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #511C00;
+}
+.footerPage p{
+  padding: 5px;
+  margin: 0;
+}
+
+body{
+  margin: 0;
+}
+
+.mainSection {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  align-items: center;
+  
+}
+
+.mainSection img {
+  width: 400px;
+  height: 300px;
+  margin: 1%;
+  transition: all 1s;
+}
+
+.mainSection img:hover {
+  transform: scale(1.05);
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .mainSection img{
+      width: 200px;
+      height: 150px;
+      margin: 5px;
+      transition: all 1s;
+  }
+}
+
+
+.scoreCard {
+  border-radius: 10px;
+  box-shadow:  1px 1px 3px rgba(0,0,0,0.3);
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+}
+
+.stars{
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.message{
+  margin-bottom: 10px;
+}
+
+.star{
+  font-size: 24px;
+}
+
+.active{
+  font-size: 24px;
+  color: gold;
+  cursor: pointer;
+}
+
+.active:hover{
+  color: yellow;
+}
+
+.star:hover{
+  color: yellow;
+}
+
+.enviarSeleccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+}
+
+.boton {
+  background: linear-gradient(135deg, #B74000, #B74000); /* degradado elegante */
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px; /* esquinas redondeadas */
+  cursor: pointer;
+  transition: all 0.3s ease; /* animación suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #B74000, #B74000); /* colores más intensos */
+  transform: translateY(-2px); /* efecto de flotación */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.boton:active {
+  transform: scale(0.96); /* efecto al presionar */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ESTILOS DEL MODAL */
+
+/* Fondo oscuro */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Caja del modal */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Botón cerrar */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
