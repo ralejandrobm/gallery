@@ -1,9 +1,11 @@
 import { useState } from "react"
 import Star from "./star"
 
-function Rate({conoceRate,index}) {
+const Rate = ({conoceRate,index},) => {
     const [raiting, setRaitin] = useState(0)
     const starts = Array.from({length: 5}, (_,i)=>(i+1))
+
+   
     
     const avisaRate = ( valor) =>
     {
