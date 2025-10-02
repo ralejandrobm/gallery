@@ -5,15 +5,15 @@ import foto3 from "../assets/primavera.jpg";
 import Rate from "./rate";
 import Envia from "./button";
 import Modal from "./modal";
-import { useState  } from "react";
+import { useState, useRef  } from "react";
 
 function MainSection() {
 
   const [images, setImages] = useState([
-    { src: foto1, rate: 0, id: 1 },
-    { src: foto2, rate: 0, id: 2 },
-    { src: foto3, rate: 0, id: 3 },
-    { src: foto4, rate: 0, id: 4 },
+    { src: foto1, rate: 0, id: 1, ref: useRef() },
+    { src: foto2, rate: 0, id: 2, ref: useRef() },
+    { src: foto3, rate: 0, id: 3, ref: useRef() },
+    { src: foto4, rate: 0, id: 4, ref: useRef() },
   ]);
 
   const [modal, setModal] = useState(false);
@@ -37,7 +37,7 @@ function MainSection() {
     const newImages = [...images];
     newImages.map((img) => (img.rate = 0));
     setImages(newImages);
-   
+    images.map((img)=>img.ref.current.resetear())
   };
 
   

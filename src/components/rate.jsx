@@ -1,11 +1,17 @@
-import { useState } from "react"
+import { useState, forwardRef, useImperativeHandle } from "react"
 import Star from "./star"
 
-const Rate = ({conoceRate,index},) => {
+const Rate = forwardRef(({conoceRate,index}, ref) => {
     const [raiting, setRaitin] = useState(0)
     const starts = Array.from({length: 5}, (_,i)=>(i+1))
 
-   
+    useImperativeHandle(ref, () => ({
+      
+      resetear: () => {setRaitin(0)
+        console.log("Reseteo el rate index "+index)
+      }
+     
+    }));
     
     const avisaRate = ( valor) =>
     {
@@ -24,7 +30,7 @@ const Rate = ({conoceRate,index},) => {
         </div>
       </>
     )
-  }
+  })
   
   export default Rate
   
